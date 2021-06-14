@@ -11,4 +11,6 @@
         <property name="name" value="zhangsan"></property>
     </bean>
 
+<!--    <context:component-scan base-pa></context:component-scan>-->
+
 </beans>
