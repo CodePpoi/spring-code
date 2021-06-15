@@ -3,6 +3,7 @@ package com.atguigu.config;
 import com.atguigu.bean.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
@@ -14,8 +15,9 @@ public class MainConfig2 {
     //request 同一次请求创建一个 基本不用
     //session 同一个session创建一个实例 基本不用
     //默认是单实例的
-    @Scope("prototype")
+//    @Scope("prototype")
     @Bean("person")
+    @Lazy
     public Person person() {
         System.out.println("给容器中添加person...");
         return new Person("张三", 25);
