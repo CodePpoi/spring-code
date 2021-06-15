@@ -13,11 +13,22 @@ import java.util.Map;
 
 public class IOCTest {
 
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+    @Test
+    @SuppressWarnings("resources")
+    public void testImport() {
+        pringBean(applicationContext);
+    }
+    private void pringBean(AnnotationConfigApplicationContext applicationContext) {
+        String[] definnitionNames =applicationContext.getBeanDefinitionNames();
+        for(String name: definnitionNames) {
+            System.out.println(name);
+        }
+    }
 
     @Test
     @SuppressWarnings("resources")
     public void test03() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
         String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         String property = environment.getProperty("os.name");

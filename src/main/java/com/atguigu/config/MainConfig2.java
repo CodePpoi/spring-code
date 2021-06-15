@@ -1,6 +1,8 @@
 package com.atguigu.config;
 
+import com.atguigu.bean.Color;
 import com.atguigu.bean.Person;
+import com.atguigu.bean.Red;
 import com.atguigu.condition.LinuxCondition;
 import com.atguigu.condition.WindowsCondition;
 import org.springframework.context.annotation.*;
@@ -8,6 +10,8 @@ import org.springframework.context.annotation.*;
 //满足windowscondition时，才会注册这个配置类里面所有的bean
 @Configuration
 @Conditional({WindowsCondition.class})
+//import快速导入组件，ID默认是组件的全类名
+@Import({Color.class, Red.class})
 public class MainConfig2 {
 
 
