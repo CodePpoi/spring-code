@@ -1,12 +1,13 @@
 package com.atguigu.config;
 
 import com.atguigu.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import com.atguigu.condition.LinuxCondition;
+import com.atguigu.condition.WindowsCondition;
+import org.springframework.context.annotation.*;
 
+//满足windowscondition时，才会注册这个配置类里面所有的bean
 @Configuration
+@Conditional({WindowsCondition.class})
 public class MainConfig2 {
 
 
@@ -21,5 +22,17 @@ public class MainConfig2 {
     public Person person() {
         System.out.println("给容器中添加person...");
         return new Person("张三", 25);
+    }
+
+//    @Conditional({WindowsCondition.class})
+    @Bean("bill")
+    public Person person01() {
+        return new Person("Bill Gates", 62);
+    }
+
+    @Conditional({LinuxCondition.class})
+    @Bean("linux")
+    public Person person02() {
+        return new Person("linus", 48);
     }
 }
