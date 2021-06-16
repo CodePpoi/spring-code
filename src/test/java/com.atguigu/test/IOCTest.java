@@ -1,6 +1,7 @@
 package com.atguigu.test;
 
 
+import com.atguigu.bean.Blue;
 import com.atguigu.bean.Person;
 import com.atguigu.config.MainConfig;
 import com.atguigu.config.MainConfig2;
@@ -18,6 +19,8 @@ public class IOCTest {
     @SuppressWarnings("resources")
     public void testImport() {
         pringBean(applicationContext);
+        Blue blue = applicationContext.getBean(Blue.class);
+        System.out.println(blue);
     }
     private void pringBean(AnnotationConfigApplicationContext applicationContext) {
         String[] definnitionNames =applicationContext.getBeanDefinitionNames();
