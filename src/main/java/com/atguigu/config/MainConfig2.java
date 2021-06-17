@@ -1,6 +1,7 @@
 package com.atguigu.config;
 
 import com.atguigu.bean.Color;
+import com.atguigu.bean.ColorFactoryBean;
 import com.atguigu.bean.Person;
 import com.atguigu.bean.Red;
 import com.atguigu.condition.LinuxCondition;
@@ -40,5 +41,10 @@ public class MainConfig2 {
     @Bean("linux")
     public Person person02() {
         return new Person("linus", 48);
+    }
+
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
     }
 }
