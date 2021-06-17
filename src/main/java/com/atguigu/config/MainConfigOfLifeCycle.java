@@ -14,6 +14,10 @@ import org.springframework.context.annotation.Scope;
  * DisposableBean(定义销毁逻辑)接口
  * 3) 使用@PostConstruct: 在bean创建完成并完成属性赋值以后 完成初始化
  * @PreDestroy: 在容器销毁bean之前通知我们进行清理工作
+ * 4) BeanPostProcessor: bean的后置处理器
+ * postProcessBeforeInitialization： 在初始化之前，比如InitializingBean的afterPropertySet方法, bean的init-method方法之前
+ * postProcessAfterInitialization: 在初始化之后，比如InitializingBean的afterPropertySet方法, bean的init-method方法之后
+ *
  * */
 @ComponentScan("com.atguigu.bean")
 @Configuration
