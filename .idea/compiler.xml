@@ -10,5 +10,8 @@
         <module name="SpringCode" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringCode" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

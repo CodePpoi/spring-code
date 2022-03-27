@@ -1,7 +1,7 @@
 package com.IOC.beans;
 
 @MyBean("userService")
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     public User getUserById(Long id) {
         User user = new User();

@@ -16,11 +16,7 @@
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>4.3.12.RELEASE</version>
-        </dependency>
+
 
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -37,17 +33,50 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <version>2.5.5</version>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.2.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>5.0.6.RELEASE</version>
+            <artifactId>spring-aop</artifactId>
+            <version>5.2.7.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
+
+        <!-- <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.5</version>
+        </dependency> -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+
     </dependencies>
 
 

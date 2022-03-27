@@ -1,11 +1,13 @@
 package com.IOC.beans;
 
 
+import java.io.Serializable;
+
 @MyBean(value = "userController")
-public class UserController {
+public class UserController{
 
     @AutoInject
-    private UserServiceImpl userService;
+    private UserService userService;
 
     public User getUserById(Long id) {
         return userService.getUserById(id);

@@ -64,4 +64,31 @@ public class ClassUtils {
     }
 
 
+    /**
+     * 获取类加载器
+     * @return
+     */
+    public static ClassLoader getDefaultClassLoader() {
+        ClassLoader classLoader = null;
+        try {
+            if (classLoader == null) {
+                classLoader = Thread.currentThread().getContextClassLoader();
+            }
+        } catch (Throwable ex) {
+            ex.printStackTrace();
+        }
+        if (classLoader == null) {
+            classLoader = ClassUtils.class.getClassLoader();
+            if (classLoader == null) {
+                try {
+                    classLoader = ClassLoader.getSystemClassLoader();
+                } catch (Throwable ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        return classLoader;
+    }
+
+
 }
